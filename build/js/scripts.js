@@ -112,6 +112,14 @@ function reproduceVideo() {
         // Autoplay was prevented.
         // Show a "Play" button so that user can start playback.
         // alert ("No hay autoplay, debemos provocarlo");
-      });
+        console.log(error);
+      })
+      .finally(()=>{
+        video.play();
+        // Configurar propiedades del video
+        video.autoplay = true;
+        video.muted = true;
+        video.loop = true;
+    });
   }
 }
