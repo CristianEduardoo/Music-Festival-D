@@ -102,6 +102,7 @@ function reproduceVideo() {
     promise
       .then((_) => {
         // Autoplay started!
+        video.play();
       })
       .catch((error) => {
         // Autoplay was prevented.
