@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function inciarApp() {
-    //reproduceVideo();
+    reproduceVideo();
     navegacionFija();//barra header fija
     crearGaleria();
     scrollNav(); //smoothScroll
@@ -115,7 +115,7 @@ function reproduceVideo() {
         console.log(error);
       })
       .finally(()=>{
-        video.play();
+        //video.play();
         // Configurar propiedades del video
         video.autoplay = true;
         video.muted = true;
