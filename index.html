@@ -34,13 +34,39 @@
         </div>
       </div>
 
-      <video id="videoJS"> <!-- autoplay muted loop -->
+      <video id="videoJS" autoplay muted loop><!-- autoplay muted loop -->
         <source src="video/concierto.mp4" type="video/mp4" />
         <source src="video/concierto.ogg" type="video/ogg" />
         <source src="video/concierto.webm" type="video/webm" />
       </video>
     </div>
 
+    <!-- <audio id="myAudio" autoplay="autoplay">
+      <source src="URL_DEL_AUDIO" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio> -->
+
+    <script language="javascript">
+      var audio = document.getElementById("videoJS");
+      var playing = 0;
+      document.getElementById("pageaudio").style.visibility = "hidden";
+
+      var promise = audio.play();
+
+      if (promise !== undefined) {
+        promise
+          .then((_) => {
+            // Autoplay started!
+          })
+          .catch((error) => {
+            // Autoplay was prevented.
+            // Show a "Play" button so that user can start playback.
+            //alert ("No hay autoplay, debemos provocarlo");
+            document.getElementById("pageaudio").style.visibility = "visible";
+          });
+      }
+    </script>
+    
     <section class="contenedor sobre-festival">
       <div class="imagen">
         <picture>
