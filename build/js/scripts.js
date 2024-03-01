@@ -95,31 +95,18 @@ function mostrarImagen(index){
 
 function reproduceVideo() {
   const video = document.querySelector("#videoJS");
-  let playing = 0;
+
+  video.autoplay = true;
+  video.muted = true;
+  video.loop = true;
 
   let promise = video.play();
+
   if (promise !== undefined) {
-    promise
-      .then((_) => {
-        // Autoplay started!
-        video.play();
-        // Configurar propiedades del video
-        video.autoplay = true;
-        video.muted = true;
-        video.loop = true;
-      })
-      .catch((error) => {
-        // Autoplay was prevented.
-        // Show a "Play" button so that user can start playback.
-        // alert ("No hay autoplay, debemos provocarlo");
-        console.log(error);
-      })
-      .finally(()=>{
-        //video.play();
-        // Configurar propiedades del video
-        video.autoplay = true;
-        video.muted = true;
-        video.loop = true;
+    promise.catch((error) => {
+      // Autoplay was prevented.
+      // Show a "Play" button so that the user can start playback.
+      console.log(error);
     });
   }
 }
