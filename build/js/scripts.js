@@ -119,6 +119,7 @@ function reproduceVideo() {
         // Reproducción iniciada con éxito
       })
       .catch((error) => {
+        alert("Error");
         // Reproducción automática bloqueada
         // Simular interacción del usuario (puede variar según el navegador)
         document.documentElement.addEventListener("click", () => {
