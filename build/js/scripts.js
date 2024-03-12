@@ -1,6 +1,20 @@
+// Asociar la función de manejo de scroll al evento de scroll
+window.addEventListener("scroll", handleScroll);
+
 document.addEventListener("DOMContentLoaded", function () {
   inciarApp();
 });
+
+// Función para verificar si el video está en el área visible durante el scroll
+function handleScroll() {
+  const video = document.querySelector("#videoJS");
+  const videoPosition = video.getBoundingClientRect();
+
+  // Reproduce el video cuando está en el área visible
+  if (videoPosition.top < window.innerHeight && videoPosition.bottom >= 0) {
+    reproduceVideo();
+  }
+}
 
 function inciarApp() {
   reproduceVideo();
@@ -69,9 +83,6 @@ function mostrarImagen(index) {
   body.classList.add("fijar-body"); // para evitar el scroll y se quede fijo
 }
 
-
-
-
 function navegacionFija() {
   const barra = document.querySelector(".header");
   const sobreFestival = document.querySelector(".sobre-festival");
@@ -103,11 +114,12 @@ function scrollNav() {
 
 function reproduceVideo() {
   const video = document.querySelector("#videoJS");
-  alert(video);
+  //alert(video);
   // Configurar propiedades del video
-  //video.autoplay = true;
+  video.autoplay = true;
   video.muted = true;
-  //video.loop = true;
+  video.loop = true;
+  //video.play() = true;
 
   // Intentar reproducir el video
   const promise = video.play();
@@ -116,15 +128,20 @@ function reproduceVideo() {
   if (promise !== undefined) {
     promise
       .then((_) => {
+        //salert("Adios");
         // Reproducción iniciada con éxito
       })
       .catch((error) => {
-        alert("Error");
+        //alert("hola");
         // Reproducción automática bloqueada
         // Simular interacción del usuario (puede variar según el navegador)
-        document.documentElement.addEventListener("click", () => {
+        document.documentElement.addEventListener(
+          "click",
+          () => {
             video.play();
-          }, { once: true } );
+          },
+          { once: true }
+        );
       });
   }
 }
