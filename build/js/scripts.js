@@ -1,5 +1,5 @@
 // Asociar la función de manejo de scroll al evento de scroll
-window.addEventListener("scroll", handleScroll);
+//window.addEventListener("scroll", handleScroll);
 
 document.addEventListener("DOMContentLoaded", function () {
   inciarApp();
@@ -135,13 +135,9 @@ function reproduceVideo() {
         //alert("hola");
         // Reproducción automática bloqueada
         // Simular interacción del usuario (puede variar según el navegador)
-        document.documentElement.addEventListener(
-          "click",
-          () => {
+        document.documentElement.addEventListener("click", () => {
             video.play();
-          },
-          { once: true }
-        );
+          }, { once: true });
       });
   }
 }
