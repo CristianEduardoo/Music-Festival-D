@@ -1,6 +1,10 @@
 // Asociar la función de manejo de scroll al evento de scroll
 //window.addEventListener("scroll", handleScroll);
 
+window.onload = function(){
+  document.getElementById('videoJs').play();
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   inciarApp();
 });
@@ -126,9 +130,8 @@ function reproduceVideo() {
 
   // Manejar la promesa para navegadores que requieren interacción del usuario
   if (promise !== undefined) {
-    promise
-      .then((_) => {
-        //salert("Adios");
+    promise.then((_) => {
+        // alert("Adios");
         // Reproducción iniciada con éxito
       })
       .catch((error) => {
