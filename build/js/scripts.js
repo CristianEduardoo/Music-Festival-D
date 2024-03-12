@@ -1,10 +1,10 @@
 // Asociar la función de manejo de scroll al evento de scroll
 //window.addEventListener("scroll", handleScroll);
 
-window.onload = function(){
+/* window.onload = function(){
   document.getElementById('videoJs').play();
 }
-
+ */
 document.addEventListener("DOMContentLoaded", function () {
   inciarApp();
 });
@@ -117,7 +117,7 @@ function scrollNav() {
 }
 
 function reproduceVideo() {
-  const video = document.querySelector("#videoJS");
+  const video = document.querySelector("#videoJS").play();
   //alert(video);
   // Configurar propiedades del video
   video.autoplay = true;
@@ -125,7 +125,7 @@ function reproduceVideo() {
   video.loop = true;
   //video.play() = true;
 
-  // Intentar reproducir el video
+/*   // Intentar reproducir el video
   const promise = video.play();
 
   // Manejar la promesa para navegadores que requieren interacción del usuario
@@ -142,5 +142,5 @@ function reproduceVideo() {
             video.play();
           }, { once: true });
       });
-  }
+  } */
 }
