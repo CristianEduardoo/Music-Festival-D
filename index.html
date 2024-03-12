@@ -16,7 +16,11 @@
 <body>
     <header class="header">
         <div class="contenedor contenedor-header">
-            <img class="logo_ia" src="./build/img/logos/logoString.png">
+            <picture >
+                <source srcset="./build/img/logos/logoRecortado.avif" type="image/avif">
+                <source srcset="./build/img/logos/logoRecortado.webp" type="image/webp">
+                <img class="logo_ia" loading="lazy" width="200" height="300" src="./build/img/logos/logoRecortado.jpg" alt="">
+            </picture>
             <nav class="navegacion-principal">
                 <a href="#lineup">Line up</a>
                 <a href="#galeria">Galería</a>
@@ -34,49 +38,19 @@
             </div>
         </div>
 
-        <video id="videoJS" autoplay muted loop>
+        <video id="videoJS"><!-- autoplay muted loop -->
             <source src="video/concierto.mp4" type="video/mp4">
             <source src="video/concierto.ogg" type="video/ogg">
             <source src="video/concierto.webm" type="video/webm">
         </video>
-
-        <button onclick="reproduceVideo()">Reproducir Video</button>
     </div>
-
-    <!-- 
-        <audio id="myAudio" autoplay="autoplay">
-            <source src="URL_DEL_AUDIO" type="audio/mpeg" />
-            Your browser does not support the audio element.
-        </audio>
- 
-        <script language="javascript">
-            var audio = document.getElementById("myAudio"); 
-            var playing = 0;
-            document.getElementById("pageaudio").style.visibility="hidden";
- 
-            var promise = audio.play();
- 
-if (promise !== undefined) {
-  promise.then(_ => {
-    // Autoplay started!
-  }).catch(error => {
-    // Autoplay was prevented.
-    // Show a "Play" button so that user can start playback.
-//alert ("No hay autoplay, debemos provocarlo");
-    document.getElementById("pageaudio").style.visibility="visible";
-  });
-}
-</script> 
-     -->
 
     <section class="contenedor sobre-festival">
         <div class="imagen">
             <picture>
                 <source srcset="build/img/arctic_monkeys.avif" type="image/avif">
                 <source srcset="build/img/arctic_monkeys.webp" type="image/webp">
-                <img loading="lazy" width="200" height="300" src="build/img/arctic_monkeys.jpg"
-                    alt="Imagen vocalista festival">
-                <!-- fallback. width="200" height="300" => siempre se recomienda ver la imagen inmediatamente, y modificarlo en el CSS -->
+                <img loading="lazy" width="200" height="300" src="build/img/arctic_monkeys.jpg" alt="Imagen vocalista festival"> <!-- fallback. width="200" height="300" => siempre se recomienda ver la imagen inmediatamente, y modificarlo en el CSS -->
             </picture>
         </div>
         <div class="contenido-festival">
@@ -114,9 +88,9 @@ if (promise !== undefined) {
                         24:00 | <span>Red Hot Chili Peppers</span>
                     </li>
                 </ul>
-            </div>
+            </div> 
 
-            <div class="escenario edm bg-newpink">
+            <div class="escenario edm bg-newpink"> 
                 <p class="nombre-escenario">Escenario EDM</p>
                 <ul class="calendario">
                     <li>
@@ -166,7 +140,7 @@ if (promise !== undefined) {
                         24:00 | <span>Arctic Monkeys</span>
                     </li>
                 </ul>
-            </div>
+            </div> 
 
             <div class="escenario edm bg-newpink">
                 <p class="nombre-escenario">Escenario EDM</p>

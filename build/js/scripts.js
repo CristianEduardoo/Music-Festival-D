@@ -103,21 +103,8 @@ function scrollNav() {
 
 function reproduceVideo() {
   const video = document.querySelector("#videoJS");
-  // Intentar reproducir el video
-  const promise = video.play();
-
-  // Manejar la promesa para navegadores que requieren interacción del usuario
-  if (promise !== undefined) {
-    promise
-      .then((_) => {
-        // Reproducción iniciada con éxito
-      })
-      .catch((error) => {
-        // Reproducción automática bloqueada
-        // Simular interacción del usuario (puede variar según el navegador)
-        document.documentElement.addEventListener("click", () => {
-            video.play();
-          }, { once: true });
-      });
-  }
+  // Configurar propiedades del video
+  video.autoplay = true;
+  video.muted = true;
+  video.loop = true;
 }
