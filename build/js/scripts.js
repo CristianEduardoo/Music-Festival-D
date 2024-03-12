@@ -103,6 +103,7 @@ function scrollNav() {
 
 function reproduceVideo() {
   const video = document.querySelector("#videoJS");
+  alert(video);
   // Configurar propiedades del video
   // video.autoplay = true;
   // video.muted = true;
