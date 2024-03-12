@@ -105,9 +105,9 @@ function reproduceVideo() {
   const video = document.querySelector("#videoJS");
   alert(video);
   // Configurar propiedades del video
-  video.autoplay = true;
+  //video.autoplay = true;
   video.muted = true;
-  video.loop = true;
+  //video.loop = true;
 
   // Intentar reproducir el video
   const promise = video.play();
