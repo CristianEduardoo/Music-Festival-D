@@ -118,19 +118,22 @@ function scrollNav() {
 
 function reproduceVideo() {
   const video = document.querySelector("#videoJS").play();
+  console.log(video);
+  
   //alert(video);
   // Configurar propiedades del video
   video.autoplay = true;
-  video.muted = true;
+  // video.muted = true;
   video.loop = true;
   //video.play() = true;
 
-/*   // Intentar reproducir el video
-  const promise = video.play();
+  // Intentar reproducir el video
+  const promise = video;
 
   // Manejar la promesa para navegadores que requieren interacción del usuario
   if (promise !== undefined) {
     promise.then((_) => {
+        console.log("adios");
         // alert("Adios");
         // Reproducción iniciada con éxito
       })
@@ -142,5 +145,7 @@ function reproduceVideo() {
             video.play();
           }, { once: true });
       });
-  } */
+  }else {
+    console.log("hola");
+  }
 }
