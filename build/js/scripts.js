@@ -16,10 +16,26 @@ function handleScroll() {
 
   // Reproduce el video cuando está en el área visible
   if (videoPosition.top < 0) {
-    video.play();
     video.autoplay = true;
     video.muted = true;
     video.loop = true;
+    
+    // Intentar reproducir el video
+    const promise = video.play();
+
+    // Manejar la promesa para navegadores que requieren interacción del usuario
+    if (promise !== undefined) {
+      promise.then((_) => {
+          console.log("hola");
+          // Reproducción iniciada con éxito
+        }).catch((error) => {
+          // Reproducción automática bloqueada
+          // Simular interacción del usuario (puede variar según el navegador)
+          document.documentElement.addEventListener("click", () => {
+              video.play();
+          }, { once: true });
+        });
+    }  
   }
 }
 
