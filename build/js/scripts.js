@@ -1,5 +1,5 @@
 // Asociar la función de manejo de scroll al evento de scroll
-//window.addEventListener("scroll", handleScroll);
+window.addEventListener("scroll", handleScroll);
 
 /* window.onload = function(){
   document.getElementById('videoJs').play();
@@ -15,13 +15,16 @@ function handleScroll() {
   const videoPosition = video.getBoundingClientRect();
 
   // Reproduce el video cuando está en el área visible
-  if (videoPosition.top < window.innerHeight && videoPosition.bottom >= 0) {
-    reproduceVideo();
+  if (videoPosition.top < 0) {
+    video.play();
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
   }
 }
 
 function inciarApp() {
-  reproduceVideo();
+  //reproduceVideo();
   navegacionFija(); //barra header fija
   crearGaleria();
   scrollNav(); //smoothScroll
@@ -117,35 +120,44 @@ function scrollNav() {
 }
 
 function reproduceVideo() {
-  const video = document.querySelector("#videoJS").play();
+  const video = document.querySelector("#videoJS");
   console.log(video);
   
   //alert(video);
   // Configurar propiedades del video
   video.autoplay = true;
-  // video.muted = true;
+  video.muted = true;
   video.loop = true;
-  //video.play() = true;
+  video.play() = true;
 
   // Intentar reproducir el video
-  const promise = video;
+  const promise = video.play();
 
   // Manejar la promesa para navegadores que requieren interacción del usuario
   if (promise !== undefined) {
     promise.then((_) => {
-        console.log("adios");
-        // alert("Adios");
+        console.log("hola");
         // Reproducción iniciada con éxito
       })
       .catch((error) => {
-        //alert("hola");
+        
         // Reproducción automática bloqueada
         // Simular interacción del usuario (puede variar según el navegador)
         document.documentElement.addEventListener("click", () => {
             video.play();
-          }, { once: true });
+        }, { once: true });
       });
   }else {
-    console.log("hola");
+    promise.then((_) => {
+        console.log("adios");
+        // Reproducción iniciada con éxito
+      })
+      .catch((error) => {
+        // Reproducción automática bloqueada
+        // Simular interacción del usuario (puede variar según el navegador)
+        document.documentElement.addEventListener("click", () => {
+          video.play();
+        }, { once: true });
+      });
   }
 }
