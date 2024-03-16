@@ -1,5 +1,5 @@
 // Asociar la función de manejo de scroll al evento de scroll
-window.addEventListener("scroll", handleScroll);
+//window.addEventListener("scroll", handleScroll);
 
 /* window.onload = function(){
   document.getElementById('videoJs').play();
@@ -40,7 +40,7 @@ function handleScroll() {
 }
 
 function inciarApp() {
-  //reproduceVideo();
+  reproduceVideo();
   navegacionFija(); //barra header fija
   crearGaleria();
   scrollNav(); //smoothScroll
