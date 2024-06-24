@@ -1,8 +1,8 @@
-// Intento 1 => Asociar la función de manejo de scroll al evento de scroll
+// Intento 2 => Asociar la función de manejo de scroll al evento de scroll
 // window.addEventListener("scroll", handleScroll);
 
 
-// Intento 2 
+// Intento extra
 /* window.onload = function(){
   document.getElementById('videoJs').play();
 }
@@ -10,14 +10,14 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  reproduceVideo();
+  reproduceVideo(); // Intento 3
   navegacionFija(); // Barra, navegación fija
   crearGaleria();
   scrollNav(); // SmoothScroll
 });
 
 
-/*=============== handleScroll (Intento 1) => función que al srollear = reproducción automatica  ===============*/
+/*=============== handleScroll (Intento 2) => función que al srollear = reproducción automatica  ===============*/
 function handleScroll() {
   const video = document.querySelector("#videoJS");
   const videoPosition = video.getBoundingClientRect();
